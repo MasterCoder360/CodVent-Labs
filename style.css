@@ -67,22 +67,35 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-}
-
-.logo-icon {
-    width: 40px;
     height: 40px;
 }
 
-.logo-text {
-    font-size: 24px;
-    font-weight: 700;
-    color: #0066CC;
-    letter-spacing: -0.5px;
+.logo img {
+    height: 40px;
+    width: auto;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.navbar.scrolled .logo-text {
-    color: white;
+/* Default logo (white) - visible when NOT scrolled */
+.logo-default {
+    display: block;
+    opacity: 1;
+}
+
+.logo-scrolled {
+    display: none;
+    opacity: 0;
+}
+
+/* When scrolled, swap the logos */
+.navbar.scrolled .logo-default {
+    display: none;
+    opacity: 0;
+}
+
+.navbar.scrolled .logo-scrolled {
+    display: block;
+    opacity: 1;
 }
 
 .nav-right {
@@ -172,7 +185,7 @@ body {
         font-size: 12px;
     }
 
-    .logo-text {
-        font-size: 18px;
+    .logo img {
+        height: 30px;
     }
 }
