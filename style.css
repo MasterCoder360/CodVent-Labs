@@ -71,20 +71,21 @@ body {
 }
 
 .logo img {
-    height: 40px;
     width: auto;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Default logo (white) - visible when NOT scrolled */
+/* Default logo (white) - BIGGER when NOT scrolled */
 .logo-default {
     display: block;
     opacity: 1;
+    height: 60px; /* Increased from 40px to 60px */
 }
 
 .logo-scrolled {
     display: none;
     opacity: 0;
+    height: 40px; /* Normal size for scrolled state */
 }
 
 /* When scrolled, swap the logos */
@@ -185,7 +186,11 @@ body {
         font-size: 12px;
     }
 
-    .logo img {
-        height: 30px;
+    .logo-default {
+        height: 50px; 
+    }
+
+    .logo-scrolled {
+        height: 30px; 
     }
 }
