@@ -7,3 +7,12 @@
       <priority>1.0</priority>
    </url>
 </urlset>
+
+  <url>
+    <loc>https://labs.cosmospark.org</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>
