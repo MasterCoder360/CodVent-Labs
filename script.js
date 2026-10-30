@@ -4,6 +4,9 @@ const ctaBtn = document.getElementById('ctaBtn');
 const introSection = document.getElementById('introSection');
 const mainContent = document.getElementById('mainContent');
 const navbar = document.getElementById('navbar');
+const projectsSection = document.getElementById('projectsSection');
+const projectsScroll = document.getElementById('projectsScroll');
+const seeMoreBtn = document.querySelector('.see-more-btn');
 
 let isMuted = true;
 
@@ -43,7 +46,6 @@ ctaBtn.addEventListener('click', () => {
 });
 
 introVideo.addEventListener('ended', () => {
-ctaBtn.click();
 });
 
 window.addEventListener('scroll', () => {
@@ -51,6 +53,13 @@ window.addEventListener('scroll', () => {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
+    }
+    
+    const projectsRect = projectsSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    
+    if (projectsRect.top < windowHeight * 0.8) {
+        projectsSection.classList.add('visible');
     }
 });
 
@@ -65,3 +74,28 @@ function updateCartCount(newCount) {
 function addToCart() {
     updateCartCount(cartCount + 1);
 }
+
+seeMoreBtn.addEventListener('click', () => {
+    projectsScroll.scrollBy({
+        left: 400,
+        behavior: 'smooth'
+    });
+});
+
+const tryButtons = document.querySelectorAll('.try-btn');
+tryButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const card = btn.closest('.project-card');
+        const projectName = card.querySelector('strong').textContent;
+        alert(`Opening ${projectName} project...`);
+    });
+});
+
+const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const projectName = card.querySelector('strong').textContent;
+        console.log(`Clicked on ${projectName}`);
+    });
+});

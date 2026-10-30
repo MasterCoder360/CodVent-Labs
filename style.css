@@ -7,6 +7,7 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     overflow-x: hidden;
+    background-color: #0f0f0f;
 }
 
 .intro-section {
@@ -71,7 +72,6 @@ body {
     width: 18px;
     height: 18px;
 }
-
 
 .intro-content {
     max-width: 600px;
@@ -270,33 +270,189 @@ body {
     position: relative;
 }
 
-
 .content {
-    padding-top: 100px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 100px 40px;
     display: flex;
-    flex-direction: column; 
-    align-items: center;     
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    background-color: #0f0f0f;
+    color: white;
 }
 
 .content h1 {
     font-size: 48px;
     margin-bottom: 20px;
-    color: #3333
+    color: white;
 }
 
 .content p {
     font-size: 18px;
     line-height: 1.6;
-    color: #666;
+    color: #999;
     max-width: 800px;
-    margin: 0 auto;          
     text-align: center;
 }
 
-/* ===== RESPONSIVE ===== */
+.projects-section {
+    background-color: #0a0a0a;
+    padding: 80px 0;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.projects-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.projects-header {
+    max-width: 1400px;
+    margin: 0 auto 40px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.projects-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+}
+
+.see-more-btn {
+    background-color: #f5f5f5;
+    color: #0a0a0a;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.see-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(245, 245, 245, 0.3);
+}
+
+.see-more-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.projects-scroll {
+    display: flex;
+    gap: 20px;
+    padding: 0 40px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.projects-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.project-card {
+    min-width: 340px;
+    max-width: 340px;
+    background-color: #1a1a1a;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-placeholder {
+    font-size: 80px;
+    opacity: 0.8;
+}
+
+.project-info {
+    padding: 24px;
+    position: relative;
+}
+
+.project-creator {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.project-creator strong {
+    color: white;
+    font-weight: 600;
+}
+
+.try-btn {
+    background: none;
+    border: none;
+    color: #ff6b6b;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.try-btn:hover {
+    color: #ff8585;
+    gap: 12px;
+}
+
+.try-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: all 0.3s ease;
+}
+
+.project-icon {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 32px;
+    height: 32px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-icon svg {
+    width: 18px;
+    height: 18px;
+    color: white;
+}
+
 @media (max-width: 768px) {
     .intro-overlay {
         padding: 30px;
@@ -333,5 +489,33 @@ body {
 
     .logo-scrolled {
         height: 30px;
+    }
+
+    .projects-header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .projects-title {
+        font-size: 24px;
+    }
+
+    .projects-scroll {
+        padding: 0 20px;
+    }
+
+    .project-card {
+        min-width: 280px;
+        max-width: 280px;
+    }
+
+    .content h1 {
+        font-size: 32px;
+    }
+
+    .content p {
+        font-size: 16px;
     }
 }
