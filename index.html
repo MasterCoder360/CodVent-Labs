@@ -6,6 +6,7 @@
     <title>CodeVent Labs</title>
     <link rel="stylesheet" href="style.css">
     <link rel="canonical" href="https://cosmospark.org" />
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <nav class="navbar" id="navbar">
@@ -23,18 +24,11 @@
 
             <div class="nav-right">
                 <button class="icon-btn" aria-label="Account">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
+                    <i data-lucide="user"></i>
                 </button>
                 <div class="cart-wrapper">
                     <button class="icon-btn" aria-label="Cart">
-                        <svg viewBox="0 0 24 24">
-                            <circle cx="9" cy="21" r="1"></circle>
-                            <circle cx="20" cy="21" r="1"></circle>
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                        </svg>
+                        <i data-lucide="shopping-cart"></i>
                     </button>
                     <span class="cart-count">0</span>
                 </div>
@@ -50,11 +44,7 @@
 
         <div class="intro-overlay">
             <button class="unmute-btn" id="unmuteBtn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                    <line x1="23" y1="9" x2="17" y2="15"></line>
-                    <line x1="17" y1="9" x2="23" y2="15"></line>
-                </svg>
+                <i data-lucide="volume-x" class="unmute-icon"></i>
                 <span>UNMUTE</span>
             </button>
 
@@ -78,12 +68,9 @@
     <section class="projects-section" id="projectsSection">
         <div class="projects-header">
             <h2 class="projects-title">Engineer Learning</h2>
-            <button class="see-more-btn">
+            <button class="see-more-btn" id="seeMoreBtn">
                 Scroll for more options
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+                <i data-lucide="arrow-right"></i>
             </button>
         </div>
         
@@ -91,107 +78,54 @@
             <div class="project-card">
                <div class="project-image" style="background: linear-gradient(135deg, #f5a623 0%, #d4a574 100%);">
                  <div class="project-placeholder">
-                    <img src="images/code.png" alt="Code Icon" style="width: 50px; height: auto;">
+                    <img src="images/code.png" alt="Code Icon" style="width: 80px; height: auto;">
                  </div>
                </div>
 
                 <div class="project-info">
-                    <p class="project-creator">Learn programming languages, easy for beginners! Availiable Languages: <strong>HTML, Logo, and Javascript.</strong><i> More coming very soon, so stay ready!</i></p>
-                    <button class="try-btn">
+                    <p class="project-creator">Learn programming languages, easy for beginners! Available Languages: <strong>HTML, Logo, and Javascript.</strong> <i>More coming very soon, so stay ready!</i></p>
+                    <a href="code.html" class="try-btn">
                         Start Learning
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </button>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
                     <div class="project-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
+                        <i data-lucide="box"></i>
                     </div>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                    <div class="project-placeholder">🎮</div>
+                 <div class="project-placeholder">
+                    <img src="images/wrench.png" alt="Engineering Icon" style="width: 80px; height: auto;">
+                 </div>
                 </div>
                 <div class="project-info">
-                    <p class="project-creator">Andromeda, Nihaal, Rimma (18, 16, 15) from UK & US made <strong>Kamikamace</strong> for Hack Club Daydream.</p>
-                    <button class="try-btn">
+                    <p class="project-creator">Learn about engineering! Learn how to engineer and develop great thinking skills. <strong>Become an engineer</strong></p>
+                    <a href="engineer.html" class="try-btn">
                         Try it out
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </button>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
                     <div class="project-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
+                        <i data-lucide="box"></i>
                     </div>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-image" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);">
-                    <div class="project-placeholder"></div>
+                 <div class="project-placeholder">
+                    <img src="images/science.png" alt="Science Icon" style="width: 80px; height: auto;">
+                 </div>
                 </div>
                 <div class="project-info">
-                    <p class="project-creator">Deltea (16) from US made <strong>Starbird</strong> for Hack Club Milkyway.</p>
-                    <button class="try-btn">
-                        Try it out
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </button>
+                    <p class="project-creator">Get <strong>Science Experiment</strong> ideas! Watch videos of conducted science experiments and build your knowledge in a fun and interactive way!</p>
+                    <a href="science.html" class="try-btn">
+                        Watch experiments
+                        <i data-lucide="arrow-right"></i>
+                    </a>
                     <div class="project-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
-                    <div class="project-placeholder"></div>
-                </div>
-                <div class="project-info">
-                    <p class="project-creator">Clément (17) from France made <strong>AngstromIO</strong> for Hack Club Blueprint.</p>
-                    <button class="try-btn">
-                        Try it out
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </button>
-                    <div class="project-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image" style="background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);">
-                    <div class="project-placeholder">👻</div>
-                </div>
-                <div class="project-info">
-                    <p class="project-creator">Yessa (18) from Philippines made <strong>Specter</strong> for Hack Club Milkyway.</p>
-                    <button class="try-btn">
-                        Try it out
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </button>
-                    <div class="project-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
+                        <i data-lucide="box"></i>
                     </div>
                 </div>
             </div>
@@ -199,5 +133,8 @@
     </section>
 
     <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

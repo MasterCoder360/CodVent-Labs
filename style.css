@@ -68,7 +68,7 @@ body {
     transform: scale(1.05);
 }
 
-.unmute-btn svg {
+.unmute-btn i {
     width: 18px;
     height: 18px;
 }
@@ -116,15 +116,6 @@ body {
     background-color: #C1121F;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(230, 57, 70, 0.4);
-}
-
-.main-content {
-    display: none;
-    min-height: 200vh;
-}
-
-.main-content.active {
-    display: block;
 }
 
 .navbar {
@@ -236,17 +227,14 @@ body {
     transform: scale(1.1);
 }
 
-.icon-btn svg {
+.icon-btn i {
     width: 24px;
     height: 24px;
-    fill: none;
     stroke: #333;
     stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
 }
 
-.navbar.scrolled .icon-btn svg {
+.navbar.scrolled .icon-btn i {
     stroke: white;
 }
 
@@ -342,7 +330,7 @@ body {
     box-shadow: 0 8px 20px rgba(245, 245, 245, 0.3);
 }
 
-.see-more-btn svg {
+.see-more-btn i {
     width: 18px;
     height: 18px;
 }
@@ -387,9 +375,10 @@ body {
     overflow: hidden;
 }
 
-.project-placeholder {
-    font-size: 80px;
-    opacity: 0.8;
+.project-placeholder img {
+    width: 80px;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
 }
 
 .project-info {
@@ -416,11 +405,12 @@ body {
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
     transition: all 0.3s ease;
     padding: 0;
+    text-decoration: none;
 }
 
 .try-btn:hover {
@@ -428,7 +418,7 @@ body {
     gap: 12px;
 }
 
-.try-btn svg {
+.try-btn i {
     width: 16px;
     height: 16px;
     transition: all 0.3s ease;
@@ -447,7 +437,7 @@ body {
     justify-content: center;
 }
 
-.project-icon svg {
+.project-icon i {
     width: 18px;
     height: 18px;
     color: white;
