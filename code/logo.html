@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeVent Labs - Coding</title>
+    <title>CodeVent Labs - Logo Programming</title>
     <link rel="stylesheet" href="style.css">
     <link rel="canonical" href="https://cosmospark.org" />
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -37,33 +37,55 @@
     </nav>
 
     <section class="tutorial-intro code-page">
-        <div class="tutorial-content reversed">
-            <div class="tutorial-video-container">
-                <video autoplay muted loop playsinline class="tutorial-video">
-                    <source src="../intro.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+        <div class="tutorial-content">
+            <div class="tutorial-video-wrapper">
+                <div class="tutorial-video-container">
+                    <video id="tutorialVideo" class="tutorial-video">
+                        <source src="../intro.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <div class="video-controls">
+                        <div class="progress-bar-container" id="progressBarContainer">
+                            <div class="progress-bar" id="progressBar"></div>
+                        </div>
+                        <div class="controls-bottom">
+                            <button class="control-btn" id="playPauseBtn">
+                                <i data-lucide="play"></i>
+                            </button>
+                            <div class="time-display">
+                                <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                            </div>
+                            <button class="control-btn" id="fullscreenBtn">
+                                <i data-lucide="maximize"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 <div class="floating-elements">
-                    <div class="float-item float-1"></div>
+                    <div class="float-item float-1">🐢</div>
                     <div class="float-item float-2">💻</div>
-                    <div class="float-item float-3"></div>
+                    <div class="float-item float-3">⚡</div>
                 </div>
             </div>
             
             <div class="tutorial-text">
-                <h1 class="tutorial-title">Master HTML.<br>Create Websites.</h1>
+                <h1 class="tutorial-title">Master Logo Programming.<br>Draw with Code.</h1>
                 <p class="tutorial-description">
                     Learn Logo programming from scratch with hands-on projects. 
-                    Move interactive turtles and learn the main prinicples of coding!
+                    Move interactive turtles and learn the main principles of coding!
                 </p>
                 <div class="tutorial-stats">
                     <p><strong>What you'll learn:</strong></p>
                     <ul class="learning-list">
                         <li><i data-lucide="check-circle"></i> Basic Commands</li>
+                        <li><i data-lucide="check-circle"></i> Turtle Graphics</li>
+                        <li><i data-lucide="check-circle"></i> Loops and Procedures</li>
+                        <li><i data-lucide="check-circle"></i> Problem Solving</li>
                     </ul>
                 </div>
                 <a href="tutorial.html" class="start-tutorial-btn">
-                    Start Learning HTML
+                    Start Learning Logo
                     <i data-lucide="arrow-right"></i>
                 </a>
             </div>
@@ -73,6 +95,84 @@
     <script src="script.js"></script>
     <script>
         lucide.createIcons();
+        
+        const video = document.getElementById('tutorialVideo');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const progressBarContainer = document.getElementById('progressBarContainer');
+        const progressBar = document.getElementById('progressBar');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const videoContainer = document.querySelector('.tutorial-video-container');
+        
+        let isPlaying = false;
+        
+        playPauseBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                video.pause();
+                playPauseBtn.innerHTML = '<i data-lucide="play"></i>';
+            } else {
+                video.play();
+                playPauseBtn.innerHTML = '<i data-lucide="pause"></i>';
+            }
+            isPlaying = !isPlaying;
+            lucide.createIcons();
+        });
+        
+        video.addEventListener('timeupdate', () => {
+            const progress = (video.currentTime / video.duration) * 100;
+            progressBar.style.width = progress + '%';
+            currentTimeEl.textContent = formatTime(video.currentTime);
+        });
+        
+        video.addEventListener('loadedmetadata', () => {
+            durationEl.textContent = formatTime(video.duration);
+        });
+        
+        // Click on progress bar to seek
+        progressBarContainer.addEventListener('click', (e) => {
+            const rect = progressBarContainer.getBoundingClientRect();
+            const pos = (e.clientX - rect.left) / rect.width;
+            video.currentTime = pos * video.duration;
+        });
+        
+        fullscreenBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                videoContainer.requestFullscreen().catch(err => {
+                    console.log(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+                fullscreenBtn.innerHTML = '<i data-lucide="minimize"></i>';
+            } else {
+                document.exitFullscreen();
+                fullscreenBtn.innerHTML = '<i data-lucide="maximize"></i>';
+            }
+            lucide.createIcons();
+        });
+        
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    video.play();
+                    isPlaying = true;
+                    playPauseBtn.innerHTML = '<i data-lucide="pause"></i>';
+                    lucide.createIcons();
+                } else {
+                    video.pause();
+                    isPlaying = false;
+                    playPauseBtn.innerHTML = '<i data-lucide="play"></i>';
+                    lucide.createIcons();
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(videoContainer);
     </script>
 </body>
 </html>
