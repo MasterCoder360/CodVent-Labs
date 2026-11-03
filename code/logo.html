@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeVent Labs - Coding</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://cosmospark.org" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <div class="nav-left">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="#" class="nav-link">View More</a>
+                <a href="#" class="nav-link">Our Goal</a>
+            </div>
+
+            <div class="logo">
+                <img src="../navlogo.png" alt="CodeVent Labs" class="logo-default" id="logoDefault">
+                <img src="../navlogo2.png" alt="CodeVent Labs" class="logo-scrolled" id="logoScrolled">
+            </div>
+
+            <div class="nav-right">
+                <button class="icon-btn" aria-label="Account">
+                    <i data-lucide="user"></i>
+                </button>
+                <div class="cart-wrapper">
+                    <button class="icon-btn" aria-label="Cart">
+                        <i data-lucide="shopping-cart"></i>
+                    </button>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="tutorial-intro code-page">
+        <div class="tutorial-content reversed">
+            <div class="tutorial-video-container">
+                <video autoplay muted loop playsinline class="tutorial-video">
+                    <source src="../intro.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="floating-elements">
+                    <div class="float-item float-1"></div>
+                    <div class="float-item float-2">💻</div>
+                    <div class="float-item float-3"></div>
+                </div>
+            </div>
+            
+            <div class="tutorial-text">
+                <h1 class="tutorial-title">Master HTML.<br>Create Websites.</h1>
+                <p class="tutorial-description">
+                    Learn Logo programming from scratch with hands-on projects. 
+                    Move interactive turtles and learn the main prinicples of coding!
+                </p>
+                <div class="tutorial-stats">
+                    <p><strong>What you'll learn:</strong></p>
+                    <ul class="learning-list">
+                        <li><i data-lucide="check-circle"></i> Basic Commands</li>
+                    </ul>
+                </div>
+                <a href="tutorial.html" class="start-tutorial-btn">
+                    Start Learning HTML
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
